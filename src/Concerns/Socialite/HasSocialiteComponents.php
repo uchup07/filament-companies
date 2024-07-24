@@ -1,4 +1,5 @@
 <?php
+
 namespace Uchup07\FilamentCompanies\Concerns\Socialite;
 
 use Filament\Facades\Filament;

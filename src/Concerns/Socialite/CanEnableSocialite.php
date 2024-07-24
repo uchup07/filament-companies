@@ -20,7 +20,7 @@ trait CanEnableSocialite
         $isEnabled = $condition instanceof Closure ? $condition() : $condition;
         static::$hasSocialiteFeatures = $isEnabled;
 
-        if(!$isEnabled) {
+        if (! $isEnabled) {
             static::disableAllSocialiteFeatures();
         }
 
@@ -41,6 +41,4 @@ trait CanEnableSocialite
     {
         return static::$hasSocialiteFeatures;
     }
-
-
 }

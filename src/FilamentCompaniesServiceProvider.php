@@ -98,7 +98,7 @@ class FilamentCompaniesServiceProvider extends PackageServiceProvider
         }
 
         // Testing
-        Testable::mixin(new TestsFilamentCompanies());
+        Testable::mixin(new TestsFilamentCompanies);
     }
 
     protected function getAssetPackageName(): ?string

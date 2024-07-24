@@ -1,6 +1,7 @@
 <?php
 
 namespace Uchup07\FilamentCompanies\Listeners;
+
 use Filament\Events\TenantSet;
 use Uchup07\FilamentCompanies\FilamentCompanies;
 use Uchup07\FilamentCompanies\HasCompanies;

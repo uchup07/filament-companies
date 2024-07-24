@@ -11,6 +11,7 @@ use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 use Livewire\Features\SupportRedirects\Redirector;
 use Uchup07\FilamentCompanies\Contracts\DeletesUsers;
+
 class DeleteUserForm extends Component
 {
     public string $password = '';
@@ -38,7 +39,7 @@ class DeleteUserForm extends Component
 
         $auth = Filament::auth();
 
-        if(! Hash::check($this->password, Auth::user()->password)) {
+        if (! Hash::check($this->password, Auth::user()->password)) {
             throw ValidationException::withMessages([
                 'password' => [__('filament-companies::companies.errors.invalid_password')],
             ]);
@@ -48,7 +49,7 @@ class DeleteUserForm extends Component
 
         $auth->logout();
 
-        if(session() !== null) {
+        if (session() !== null) {
             session()->invalidate();
             session()->regenerateToken();
         }

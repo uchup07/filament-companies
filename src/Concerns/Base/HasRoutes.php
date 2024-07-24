@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use Uchup07\FilamentCompanies\Http\Controllers\CompanyInvitationController;
 use Uchup07\FilamentCompanies\Http\Controllers\OAuthController;
+
 //use Uchup07\FilamentCompanies\Pages\Auth\PrivacyPolicy;
 //use Uchup07\FilamentCompanies\Pages\Auth\Terms;
 

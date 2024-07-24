@@ -1,4 +1,5 @@
 <?php
+
 namespace Uchup07\FilamentCompanies\Http\Livewire;
 
 use Filament\Notifications\Notification;

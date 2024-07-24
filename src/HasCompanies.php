@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+
 //use Laravel\Sanctum\HasApiTokens;
 
 trait HasCompanies
@@ -106,46 +107,46 @@ trait HasCompanies
         }
 
         return $this->ownsCompany($company) || $this->companies->contains(static function ($t) use ($company) {
-                return $t->id === $company->id;
-            });
+            return $t->id === $company->id;
+        });
     }
 
     /**
      * Get the role that the user has on the company.
      */
-   /* public function companyRole(mixed $company): ?Role
-    {
-        if ($this->ownsCompany($company)) {
-            return new OwnerRole;
-        }
+    /* public function companyRole(mixed $company): ?Role
+     {
+         if ($this->ownsCompany($company)) {
+             return new OwnerRole;
+         }
 
-        if (! $this->belongsToCompany($company)) {
-            return null;
-        }
+         if (! $this->belongsToCompany($company)) {
+             return null;
+         }
 
-        $role = $company->users
-            ->where('id', $this->id)
-            ->first()
-            ->employeeship
-            ->role;
+         $role = $company->users
+             ->where('id', $this->id)
+             ->first()
+             ->employeeship
+             ->role;
 
-        return $role ? FilamentCompanies::findRole($role) : null;
-    }*/
+         return $role ? FilamentCompanies::findRole($role) : null;
+     }*/
 
     /**
      * Determine if the user has the given role on the given company.
      */
-   /* public function hasCompanyRole(mixed $company, string $role): bool
-    {
-        if ($this->ownsCompany($company)) {
-            return true;
-        }
+    /* public function hasCompanyRole(mixed $company, string $role): bool
+     {
+         if ($this->ownsCompany($company)) {
+             return true;
+         }
 
-        return $this->belongsToCompany($company) && FilamentCompanies::findRole($company->users->where(
-                'id',
-                $this->id
-            )->first()->employeeship->role)?->key === $role;
-    }*/
+         return $this->belongsToCompany($company) && FilamentCompanies::findRole($company->users->where(
+                 'id',
+                 $this->id
+             )->first()->employeeship->role)?->key === $role;
+     }*/
 
     /**
      * Get the user's permissions for the given company.

@@ -18,7 +18,7 @@ use Uchup07\FilamentCompanies\HasProfilePhoto;
 
 class User extends Authenticatable implements FilamentUser, HasAvatar, HasDefaultTenant, HasTenants
 {
-//    use HasApiTokens;
+    //    use HasApiTokens;
     use HasCompanies;
     use HasFactory;
     use HasProfilePhoto;

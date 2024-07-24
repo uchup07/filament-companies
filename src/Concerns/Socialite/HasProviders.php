@@ -3,8 +3,8 @@
 namespace Uchup07\FilamentCompanies\Concerns\Socialite;
 
 use InvalidArgumentException;
-use ValueError;
 use Uchup07\FilamentCompanies\Enums\Provider;
+use ValueError;
 
 trait HasProviders
 {

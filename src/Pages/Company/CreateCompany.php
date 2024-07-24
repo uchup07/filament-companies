@@ -4,12 +4,10 @@ namespace Uchup07\FilamentCompanies\Pages\Company;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
-use Filament\Notifications\Notification;
 use Filament\Pages\Tenancy\RegisterTenant as FilamentRegisterTenant;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Str;
 use Uchup07\FilamentCompanies\Events\AddingCompany;
 use Uchup07\FilamentCompanies\FilamentCompanies;
 
@@ -43,5 +41,4 @@ class CreateCompany extends FilamentRegisterTenant
 
         AddingCompany::dispatch($user);
     }
-
 }

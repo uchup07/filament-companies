@@ -3,6 +3,7 @@
 namespace Uchup07\FilamentCompanies\Events;
 
 use Illuminate\Foundation\Events\Dispatchable;
+
 class AddingCompany
 {
     use Dispatchable;

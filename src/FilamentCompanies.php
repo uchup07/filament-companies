@@ -8,14 +8,14 @@ use Filament\Panel;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Event;
 use Livewire\Livewire;
-use Uchup07\FilamentCompanies\Pages\Company\CompanySettings;
-use Uchup07\FilamentCompanies\Pages\Company\CreateCompany;
 use Uchup07\FilamentCompanies\Contracts\CreatesConnectedAccounts;
 use Uchup07\FilamentCompanies\Contracts\CreatesUserFromProvider;
 use Uchup07\FilamentCompanies\Contracts\HandlesInvalidState;
 use Uchup07\FilamentCompanies\Contracts\UpdatesConnectedAccounts;
 use Uchup07\FilamentCompanies\Http\Controllers\OAuthController;
 use Uchup07\FilamentCompanies\Listeners\SwitchCurrentCompany;
+use Uchup07\FilamentCompanies\Pages\Company\CompanySettings;
+use Uchup07\FilamentCompanies\Pages\Company\CreateCompany;
 
 class FilamentCompanies implements Plugin
 {
@@ -28,7 +28,8 @@ class FilamentCompanies implements Plugin
     use Concerns\Base\HasModals;
     use Concerns\Base\HasNotifications;
     use Concerns\Base\HasPanels;
-//    use Concerns\Base\HasPermissions;
+
+    //    use Concerns\Base\HasPermissions;
     use Concerns\Base\HasRoutes;
     use Concerns\ManagesProfileComponents;
     use Concerns\Socialite\CanEnableSocialite;
@@ -38,6 +39,7 @@ class FilamentCompanies implements Plugin
     use Concerns\Socialite\HasSocialiteActionBindings;
     use Concerns\Socialite\HasSocialiteComponents;
     use Concerns\Socialite\HasSocialiteProfileFeatures;
+
     public function getId(): string
     {
         return 'companies';
@@ -50,7 +52,7 @@ class FilamentCompanies implements Plugin
 
     public function register(Panel $panel): void
     {
-        if(static::hasSocialiteFeatures()) {
+        if (static::hasSocialiteFeatures()) {
             Livewire::component('filament.pages.companies.create_company', CreateCompany::class);
             Livewire::component('filament.pages.companies.company_setings', CompanySettings::class);
         }

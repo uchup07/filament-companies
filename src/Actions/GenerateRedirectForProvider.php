@@ -1,4 +1,5 @@
 <?php
+
 namespace Uchup07\FilamentCompanies\Actions;
 
 use Laravel\Socialite\Facades\Socialite;
