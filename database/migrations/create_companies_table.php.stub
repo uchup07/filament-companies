@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up()
+    {
+        Schema::create( config('companies.table_prefix') . 'companies', function (Blueprint $table) {
+            $table->id();
+            $table->uuid();
+            $table->foreignId('user_id')->index();
+            $table->string('name');
+            $table->string('abbrv');
+            $table->string('code');
+            $table->boolean('personal_company');
+
+            $table->timestamps();
+
+            $table->unique(['abbrv','code']);
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists(config('companies.table_prefix') . 'companies');
+    }
+};

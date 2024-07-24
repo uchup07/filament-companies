@@ -1,53 +1,56 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "uchup07/filament-companies",
+    "description": "This is my package filament-companies",
     "keywords": [
-        ":vendor_name",
+        "uchup07",
         "laravel",
-        ":package_slug"
+        "filament-companies"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/uchup07/filament-companies",
     "support": {
-        "issues": "https://github.com/:vendor_slug/:package_slug/issues",
-        "source": "https://github.com/:vendor_slug/:package_slug"
+        "issues": "https://github.com/uchup07/filament-companies/issues",
+        "source": "https://github.com/uchup07/filament-companies"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Yusuf",
+            "email": "uchup07@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.1",
+        "bezhansalleh/filament-shield": "^3.2",
         "filament/filament": "^3.0",
-        "filament/forms": "^3.0",
-        "filament/tables": "^3.0",
+        "illuminate/console": "^11.0",
+        "illuminate/contracts": "^11.0",
+        "illuminate/support": "^11.0",
+        "laravel/socialite": "^5.12",
+        "matomo/device-detector": "^6.3",
         "spatie/laravel-package-tools": "^1.15.0"
     },
     "require-dev": {
-        "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^7.9",
-        "nunomaduro/larastan": "^2.0.1",
-        "orchestra/testbench": "^8.0",
+        "laravel/pint": "^1.14",
+        "orchestra/testbench": "^9.0",
+        "livewire/livewire": "^3.5",
         "pestphp/pest": "^2.1",
         "pestphp/pest-plugin-arch": "^2.0",
         "pestphp/pest-plugin-laravel": "^2.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0",
-        "spatie/laravel-ray": "^1.26"
+        "phpstan/phpstan-phpunit": "^1.0"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Uchup07\\FilamentCompanies\\": "src/",
+            "Uchup07\\FilamentCompanies\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "App\\": "stubs/app/",
+            "Uchup07\\FilamentCompanies\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -67,10 +70,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Uchup07\\FilamentCompanies\\FilamentCompaniesServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "FilamentCompanies": "Uchup07\\FilamentCompanies\\Facades\\FilamentCompanies"
             }
         }
     },
